@@ -6,15 +6,11 @@ Gestion de l'authentification JWT et du hashage des mots de passe.
 from datetime import datetime, timedelta
 from typing import Any, Optional, Dict, Union
 
+import bcrypt
 from jose import JWTError, jwt
-from passlib.context import CryptContext
 
 from app.config import settings
 from app.core.logging import logger
-
-
-# Configuration du contexte de hashage des mots de passe
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
@@ -29,7 +25,10 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
         True si le mot de passe est correct, False sinon
     """
     try:
-        return pwd_context.verify(plain_password, hashed_password)
+        return bcrypt.checkpw(
+            plain_password.encode('utf-8'),
+            hashed_password.encode('utf-8')
+        )
     except Exception as e:
         logger.error(f"Erreur lors de la vérification du mot de passe: {e}")
         return False
@@ -45,7 +44,9 @@ def get_password_hash(password: str) -> str:
     Returns:
         Hash du mot de passe
     """
-    return pwd_context.hash(password)
+    salt = bcrypt.gensalt()
+    hashed = bcrypt.hashpw(password.encode('utf-8'), salt)
+    return hashed.decode('utf-8')
 
 
 def create_access_token(
