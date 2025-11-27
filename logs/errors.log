@@ -1,0 +1,151 @@
+2025-11-26 18:24:07.664 | ERROR    | app.database:check_db_connection:134 | Impossible de se connecter à la base de données: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-26 18:24:07.665 | ERROR    | app.main:lifespan:43 | Impossible de se connecter à la base de données!
+2025-11-26 18:24:36.382 | ERROR    | app.database:check_db_connection:134 | Impossible de se connecter à la base de données: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-26 18:24:36.382 | ERROR    | app.main:lifespan:43 | Impossible de se connecter à la base de données!
+2025-11-26 18:24:37.803 | ERROR    | app.database:check_db_connection:134 | Impossible de se connecter à la base de données: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-26 18:24:37.803 | ERROR    | app.main:lifespan:43 | Impossible de se connecter à la base de données!
+2025-11-26 18:25:06.028 | ERROR    | app.database:check_db_connection:134 | Impossible de se connecter à la base de données: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-26 18:25:06.028 | ERROR    | app.main:lifespan:43 | Impossible de se connecter à la base de données!
+2025-11-26 18:25:07.059 | ERROR    | app.database:check_db_connection:134 | Impossible de se connecter à la base de données: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-26 18:25:07.059 | ERROR    | app.main:lifespan:43 | Impossible de se connecter à la base de données!
+2025-11-26 18:25:24.229 | ERROR    | app.database:check_db_connection:134 | Impossible de se connecter à la base de données: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-26 18:25:24.229 | ERROR    | app.main:lifespan:43 | Impossible de se connecter à la base de données!
+2025-11-26 18:25:35.408 | ERROR    | app.database:check_db_connection:134 | Impossible de se connecter à la base de données: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-26 18:25:46.840 | ERROR    | app.database:check_db_connection:134 | Impossible de se connecter à la base de données: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-26 18:25:46.840 | ERROR    | app.main:lifespan:43 | Impossible de se connecter à la base de données!
+2025-11-26 18:29:50.910 | ERROR    | app.database:check_db_connection:134 | Impossible de se connecter à la base de données: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-26 18:29:50.910 | ERROR    | app.main:lifespan:43 | Impossible de se connecter à la base de données!
+2025-11-26 18:29:50.911 | ERROR    | app.main:lifespan:50 | Erreur d'initialisation: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-27 10:44:55.713 | ERROR    | app.database:check_db_connection:134 | Impossible de se connecter à la base de données: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "kobiri_user"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-27 10:44:55.713 | ERROR    | app.main:lifespan:43 | Impossible de se connecter à la base de données!
+2025-11-27 10:44:55.720 | ERROR    | app.main:lifespan:50 | Erreur d'initialisation: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "kobiri_user"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-27 10:45:46.213 | ERROR    | app.database:check_db_connection:134 | Impossible de se connecter à la base de données: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  database "kobiri_db" does not exist
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-27 10:45:46.213 | ERROR    | app.main:lifespan:43 | Impossible de se connecter à la base de données!
+2025-11-27 10:45:46.220 | ERROR    | app.main:lifespan:50 | Erreur d'initialisation: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  database "kobiri_db" does not exist
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-27 10:46:13.071 | ERROR    | app.database:check_db_connection:134 | Impossible de se connecter à la base de données: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  database "kobiri" does not exist
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-27 10:46:13.071 | ERROR    | app.main:lifespan:43 | Impossible de se connecter à la base de données!
+2025-11-27 10:46:13.077 | ERROR    | app.main:lifespan:50 | Erreur d'initialisation: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  database "kobiri" does not exist
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-11-27 10:52:45.450 | ERROR    | app.database:get_db:81 | Erreur lors de l'utilisation de la session: Could not determine join condition between parent/child tables on relationship User.payments - there are multiple foreign key paths linking the tables.  Specify the 'foreign_keys' argument, providing a list of those columns which should be counted as containing a foreign key reference to the parent table.
+2025-11-27 10:52:45.451 | ERROR    | app.main:sqlalchemy_exception_handler:195 | Erreur SQLAlchemy: Could not determine join condition between parent/child tables on relationship User.payments - there are multiple foreign key paths linking the tables.  Specify the 'foreign_keys' argument, providing a list of those columns which should be counted as containing a foreign key reference to the parent table.
+2025-11-27 10:56:42.697 | ERROR    | app.database:get_db:81 | Erreur lors de l'utilisation de la session: (psycopg2.errors.UndefinedTable) relation "users" does not exist
+LINE 2: FROM users 
+             ^
+
+[SQL: SELECT users.id AS users_id, users.email AS users_email, users.phone AS users_phone, users.hashed_password AS users_hashed_password, users.first_name AS users_first_name, users.last_name AS users_last_name, users.profile_picture AS users_profile_picture, users.address AS users_address, users.city AS users_city, users.country AS users_country, users.role AS users_role, users.is_active AS users_is_active, users.is_verified AS users_is_verified, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.last_login AS users_last_login, users.reset_token AS users_reset_token, users.reset_token_expires AS users_reset_token_expires, users.verification_code AS users_verification_code, users.verification_code_expires AS users_verification_code_expires 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'email_1': 'user@example.com', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-11-27 10:56:42.698 | ERROR    | app.main:sqlalchemy_exception_handler:195 | Erreur SQLAlchemy: (psycopg2.errors.UndefinedTable) relation "users" does not exist
+LINE 2: FROM users 
+             ^
+
+[SQL: SELECT users.id AS users_id, users.email AS users_email, users.phone AS users_phone, users.hashed_password AS users_hashed_password, users.first_name AS users_first_name, users.last_name AS users_last_name, users.profile_picture AS users_profile_picture, users.address AS users_address, users.city AS users_city, users.country AS users_country, users.role AS users_role, users.is_active AS users_is_active, users.is_verified AS users_is_verified, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.last_login AS users_last_login, users.reset_token AS users_reset_token, users.reset_token_expires AS users_reset_token_expires, users.verification_code AS users_verification_code, users.verification_code_expires AS users_verification_code_expires 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'email_1': 'user@example.com', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-11-27 11:27:24.780 | ERROR    | app.database:get_db:81 | Erreur lors de l'utilisation de la session: (psycopg2.errors.InvalidTextRepresentation) invalid input value for enum userrole: "MEMBRE"
+LINE 1: ...iop', NULL, 'Rue 12, Médina', 'Dakar', 'Sénégal', 'MEMBRE', ...
+                                                             ^
+
+[SQL: INSERT INTO users (email, phone, hashed_password, first_name, last_name, profile_picture, address, city, country, role, is_active, is_verified, created_at, updated_at, last_login, reset_token, reset_token_expires, verification_code, verification_code_expires) VALUES (%(email)s, %(phone)s, %(hashed_password)s, %(first_name)s, %(last_name)s, %(profile_picture)s, %(address)s, %(city)s, %(country)s, %(role)s, %(is_active)s, %(is_verified)s, %(created_at)s, %(updated_at)s, %(last_login)s, %(reset_token)s, %(reset_token_expires)s, %(verification_code)s, %(verification_code_expires)s) RETURNING users.id]
+[parameters: {'email': 'user@example.com', 'phone': '+221770000000', 'hashed_password': '$2b$12$XRMEpJBbDZe/e2vipfOaoOL9sdv1ikkJPe25RwlI4fmM5rS1/tlma', 'first_name': 'Moussa', 'last_name': 'Diop', 'profile_picture': None, 'address': 'Rue 12, Médina', 'city': 'Dakar', 'country': 'Sénégal', 'role': 'MEMBRE', 'is_active': True, 'is_verified': False, 'created_at': datetime.datetime(2025, 11, 27, 10, 27, 24, 778717), 'updated_at': datetime.datetime(2025, 11, 27, 10, 27, 24, 778719), 'last_login': None, 'reset_token': None, 'reset_token_expires': None, 'verification_code': None, 'verification_code_expires': None}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2025-11-27 11:27:24.781 | ERROR    | app.main:sqlalchemy_exception_handler:195 | Erreur SQLAlchemy: (psycopg2.errors.InvalidTextRepresentation) invalid input value for enum userrole: "MEMBRE"
+LINE 1: ...iop', NULL, 'Rue 12, Médina', 'Dakar', 'Sénégal', 'MEMBRE', ...
+                                                             ^
+
+[SQL: INSERT INTO users (email, phone, hashed_password, first_name, last_name, profile_picture, address, city, country, role, is_active, is_verified, created_at, updated_at, last_login, reset_token, reset_token_expires, verification_code, verification_code_expires) VALUES (%(email)s, %(phone)s, %(hashed_password)s, %(first_name)s, %(last_name)s, %(profile_picture)s, %(address)s, %(city)s, %(country)s, %(role)s, %(is_active)s, %(is_verified)s, %(created_at)s, %(updated_at)s, %(last_login)s, %(reset_token)s, %(reset_token_expires)s, %(verification_code)s, %(verification_code_expires)s) RETURNING users.id]
+[parameters: {'email': 'user@example.com', 'phone': '+221770000000', 'hashed_password': '$2b$12$XRMEpJBbDZe/e2vipfOaoOL9sdv1ikkJPe25RwlI4fmM5rS1/tlma', 'first_name': 'Moussa', 'last_name': 'Diop', 'profile_picture': None, 'address': 'Rue 12, Médina', 'city': 'Dakar', 'country': 'Sénégal', 'role': 'MEMBRE', 'is_active': True, 'is_verified': False, 'created_at': datetime.datetime(2025, 11, 27, 10, 27, 24, 778717), 'updated_at': datetime.datetime(2025, 11, 27, 10, 27, 24, 778719), 'last_login': None, 'reset_token': None, 'reset_token_expires': None, 'verification_code': None, 'verification_code_expires': None}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2025-11-27 11:31:28.555 | ERROR    | app.database:get_db:81 | Erreur lors de l'utilisation de la session: 
+2025-11-27 11:44:18.121 | ERROR    | app.database:get_db:81 | Erreur lors de l'utilisation de la session: 
+2025-11-27 11:44:39.170 | ERROR    | app.database:get_db:81 | Erreur lors de l'utilisation de la session: 
+2025-11-27 12:01:44.783 | ERROR    | app.database:get_db:81 | Erreur lors de l'utilisation de la session: (psycopg2.errors.InvalidTextRepresentation) invalid input value for enum tontinetype: "ROTATIVE"
+LINE 1: ...le ', 'On va construire notre maison ', 'ARH8E9', 'ROTATIVE'...
+                                                             ^
+
+[SQL: INSERT INTO tontines (name, description, code, type, frequency, contribution_amount, currency, max_members, min_members, start_date, end_date, rules, penalty_amount, grace_period_days, is_active, is_public, created_by_id, created_at, updated_at) VALUES (%(name)s, %(description)s, %(code)s, %(type)s, %(frequency)s, %(contribution_amount)s, %(currency)s, %(max_members)s, %(min_members)s, %(start_date)s, %(end_date)s, %(rules)s, %(penalty_amount)s, %(grace_period_days)s, %(is_active)s, %(is_public)s, %(created_by_id)s, %(created_at)s, %(updated_at)s) RETURNING tontines.id]
+[parameters: {'name': 'Famille ', 'description': 'On va construire notre maison ', 'code': 'ARH8E9', 'type': 'ROTATIVE', 'frequency': 'MENSUEL', 'contribution_amount': Decimal('1'), 'currency': 'FCFA', 'max_members': 12, 'min_members': 3, 'start_date': datetime.datetime(2025, 11, 27, 10, 44, 56, 572000, tzinfo=TzInfo(UTC)), 'end_date': datetime.datetime(2026, 11, 27, 10, 44, 56, 572000, tzinfo=TzInfo(UTC)), 'rules': 'string', 'penalty_amount': Decimal('0'), 'grace_period_days': 3, 'is_active': True, 'is_public': False, 'created_by_id': 1, 'created_at': datetime.datetime(2025, 11, 27, 11, 1, 44, 781964), 'updated_at': datetime.datetime(2025, 11, 27, 11, 1, 44, 781968)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2025-11-27 12:01:44.784 | ERROR    | app.main:sqlalchemy_exception_handler:195 | Erreur SQLAlchemy: (psycopg2.errors.InvalidTextRepresentation) invalid input value for enum tontinetype: "ROTATIVE"
+LINE 1: ...le ', 'On va construire notre maison ', 'ARH8E9', 'ROTATIVE'...
+                                                             ^
+
+[SQL: INSERT INTO tontines (name, description, code, type, frequency, contribution_amount, currency, max_members, min_members, start_date, end_date, rules, penalty_amount, grace_period_days, is_active, is_public, created_by_id, created_at, updated_at) VALUES (%(name)s, %(description)s, %(code)s, %(type)s, %(frequency)s, %(contribution_amount)s, %(currency)s, %(max_members)s, %(min_members)s, %(start_date)s, %(end_date)s, %(rules)s, %(penalty_amount)s, %(grace_period_days)s, %(is_active)s, %(is_public)s, %(created_by_id)s, %(created_at)s, %(updated_at)s) RETURNING tontines.id]
+[parameters: {'name': 'Famille ', 'description': 'On va construire notre maison ', 'code': 'ARH8E9', 'type': 'ROTATIVE', 'frequency': 'MENSUEL', 'contribution_amount': Decimal('1'), 'currency': 'FCFA', 'max_members': 12, 'min_members': 3, 'start_date': datetime.datetime(2025, 11, 27, 10, 44, 56, 572000, tzinfo=TzInfo(UTC)), 'end_date': datetime.datetime(2026, 11, 27, 10, 44, 56, 572000, tzinfo=TzInfo(UTC)), 'rules': 'string', 'penalty_amount': Decimal('0'), 'grace_period_days': 3, 'is_active': True, 'is_public': False, 'created_by_id': 1, 'created_at': datetime.datetime(2025, 11, 27, 11, 1, 44, 781964), 'updated_at': datetime.datetime(2025, 11, 27, 11, 1, 44, 781968)}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2025-11-27 12:12:50.331 | ERROR    | app.database:get_db:81 | Erreur lors de l'utilisation de la session: 
+2025-11-27 14:25:57.511 | ERROR    | app.database:get_db:81 | Erreur lors de l'utilisation de la session: [{'type': 'model_attributes_type', 'loc': ('body',), 'msg': 'Input should be a valid dictionary or object to extract fields from', 'input': b'----dio-boundary-1334980192\r\ncontent-disposition: form-data; name="username"\r\n\r\nuser@example.com\r\n----dio-boundary-1334980192\r\ncontent-disposition: form-data; name="password"\r\n\r\nMotDePasse123!\r\n----dio-boundary-1334980192--\r\n', 'url': 'https://errors.pydantic.dev/2.5/v/model_attributes_type'}]
+2025-11-27 14:27:54.027 | ERROR    | app.database:get_db:81 | Erreur lors de l'utilisation de la session: [{'type': 'model_attributes_type', 'loc': ('body',), 'msg': 'Input should be a valid dictionary or object to extract fields from', 'input': b'----dio-boundary-1540201703\r\ncontent-disposition: form-data; name="username"\r\n\r\nuser@example.com\r\n----dio-boundary-1540201703\r\ncontent-disposition: form-data; name="password"\r\n\r\nMotDePasse123!\r\n----dio-boundary-1540201703--\r\n', 'url': 'https://errors.pydantic.dev/2.5/v/model_attributes_type'}]
+2025-11-27 14:30:06.644 | ERROR    | app.database:get_db:81 | Erreur lors de l'utilisation de la session: [{'type': 'model_attributes_type', 'loc': ('body',), 'msg': 'Input should be a valid dictionary or object to extract fields from', 'input': b'----dio-boundary-3136508869\r\ncontent-disposition: form-data; name="username"\r\n\r\nuser@example.com\r\n----dio-boundary-3136508869\r\ncontent-disposition: form-data; name="password"\r\n\r\nMotDePasse123!\r\n----dio-boundary-3136508869--\r\n', 'url': 'https://errors.pydantic.dev/2.5/v/model_attributes_type'}]
+2025-11-27 14:30:45.946 | ERROR    | app.database:get_db:81 | Erreur lors de l'utilisation de la session: [{'type': 'model_attributes_type', 'loc': ('body',), 'msg': 'Input should be a valid dictionary or object to extract fields from', 'input': b'----dio-boundary-4091055628\r\ncontent-disposition: form-data; name="username"\r\n\r\nuser@example.com\r\n----dio-boundary-4091055628\r\ncontent-disposition: form-data; name="password"\r\n\r\nMotDePasse123!\r\n----dio-boundary-4091055628--\r\n', 'url': 'https://errors.pydantic.dev/2.5/v/model_attributes_type'}]
+2025-11-27 14:32:30.715 | ERROR    | app.database:get_db:81 | Erreur lors de l'utilisation de la session: [{'type': 'int_parsing', 'loc': ('path', 'user_id'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': 'me', 'url': 'https://errors.pydantic.dev/2.5/v/int_parsing'}]
+2025-11-27 14:33:51.906 | ERROR    | app.database:get_db:81 | Erreur lors de l'utilisation de la session: [{'type': 'int_parsing', 'loc': ('path', 'user_id'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': 'me', 'url': 'https://errors.pydantic.dev/2.5/v/int_parsing'}]
+2025-11-27 14:34:02.931 | ERROR    | app.database:get_db:81 | Erreur lors de l'utilisation de la session: [{'type': 'int_parsing', 'loc': ('path', 'user_id'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': 'me', 'url': 'https://errors.pydantic.dev/2.5/v/int_parsing'}]
+2025-11-27 14:34:32.690 | ERROR    | app.database:get_db:81 | Erreur lors de l'utilisation de la session: [{'type': 'int_parsing', 'loc': ('path', 'user_id'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': 'me', 'url': 'https://errors.pydantic.dev/2.5/v/int_parsing'}]
