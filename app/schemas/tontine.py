@@ -52,6 +52,7 @@ class TontineUpdate(BaseModel):
     name: Optional[str] = Field(None, min_length=3, max_length=200)
     description: Optional[str] = Field(None, max_length=1000)
     rules: Optional[str] = Field(None, max_length=5000)
+    max_members: Optional[int] = Field(None, ge=2, le=100)
     penalty_amount: Optional[Decimal] = Field(None, ge=0)
     grace_period_days: Optional[int] = Field(None, ge=0, le=30)
     is_public: Optional[bool] = None
