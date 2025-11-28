@@ -184,10 +184,31 @@ class PasswordReset(BaseModel):
 
 
 class PasswordResetConfirm(BaseModel):
-    """Schéma pour confirmer la réinitialisation."""
-    token: str = Field(..., description="Token de réinitialisation")
+    """Schéma pour confirmer la réinitialisation avec code."""
+    email: EmailStr = Field(..., description="Email de l'utilisateur")
+    code: str = Field(..., min_length=6, max_length=6, description="Code à 6 chiffres")
     new_password: str = Field(..., min_length=8)
     confirm_password: str
+    
+    @field_validator("code")
+    @classmethod
+    def validate_code(cls, v: str) -> str:
+        if not v.isdigit() or len(v) != 6:
+            raise ValueError("Le code doit contenir exactement 6 chiffres")
+        return v
+    
+    @field_validator("new_password")
+    @classmethod
+    def validate_new_password(cls, v: str) -> str:
+        if len(v) < 8:
+            raise ValueError("Le mot de passe doit contenir au moins 8 caractères")
+        if not re.search(r"[A-Z]", v):
+            raise ValueError("Le mot de passe doit contenir au moins une majuscule")
+        if not re.search(r"[a-z]", v):
+            raise ValueError("Le mot de passe doit contenir au moins une minuscule")
+        if not re.search(r"[0-9]", v):
+            raise ValueError("Le mot de passe doit contenir au moins un chiffre")
+        return v
     
     @field_validator("confirm_password")
     @classmethod

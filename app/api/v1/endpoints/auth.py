@@ -26,8 +26,10 @@ from app.schemas.user import (
     Token,
     PasswordChange,
     PasswordReset,
+    PasswordResetConfirm,
 )
 from app.api.deps import get_current_user, get_current_active_user
+from app.services.email_service import email_service
 
 
 router = APIRouter()
@@ -267,8 +269,10 @@ async def forgot_password(
     db: Session = Depends(get_db),
 ) -> Any:
     """
-    Envoie un email/SMS de réinitialisation du mot de passe.
+    Envoie un email avec un code de réinitialisation du mot de passe.
     """
+    import random
+    
     user = None
     if reset_data.email:
         user = db.query(User).filter(User.email == reset_data.email).first()
@@ -277,22 +281,72 @@ async def forgot_password(
     
     # Pour des raisons de sécurité, ne pas révéler si l'utilisateur existe
     if user:
-        # Générer un token de réinitialisation
-        import secrets
-        reset_token = secrets.token_urlsafe(32)
-        user.reset_token = reset_token
+        # Générer un code à 6 chiffres
+        reset_code = ''.join([str(random.randint(0, 9)) for _ in range(6)])
+        user.reset_token = reset_code
         user.reset_token_expires = datetime.utcnow() + timedelta(hours=1)
         db.commit()
         
-        logger.info(f"Token de réinitialisation généré pour: {user.email}")
+        logger.info(f"Code de réinitialisation généré pour: {user.email}")
         
-        # TODO: Envoyer email/SMS avec le token
-        # background_tasks.add_task(send_reset_email, user.email, reset_token)
+        # Envoyer l'email en arrière-plan
+        background_tasks.add_task(
+            email_service.send_password_reset_email,
+            user.email,
+            user.full_name,
+            reset_code,
+        )
     
     return {
         "message": "Si un compte existe avec ces informations, "
-                   "vous recevrez un email/SMS de réinitialisation"
+                   "vous recevrez un email avec un code de réinitialisation"
     }
+
+
+@router.post(
+    "/reset-password",
+    status_code=status.HTTP_200_OK,
+    summary="Réinitialiser le mot de passe avec le code",
+)
+async def reset_password(
+    reset_data: PasswordResetConfirm,
+    db: Session = Depends(get_db),
+) -> Any:
+    """
+    Réinitialise le mot de passe avec le code reçu par email.
+    """
+    # Trouver l'utilisateur par email
+    user = db.query(User).filter(User.email == reset_data.email).first()
+    
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Email non trouvé",
+        )
+    
+    # Vérifier le code
+    if not user.reset_token or user.reset_token != reset_data.code:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Code de réinitialisation invalide",
+        )
+    
+    # Vérifier l'expiration
+    if user.reset_token_expires and user.reset_token_expires < datetime.utcnow():
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Le code a expiré. Veuillez en demander un nouveau.",
+        )
+    
+    # Mettre à jour le mot de passe
+    user.hashed_password = get_password_hash(reset_data.new_password)
+    user.reset_token = None
+    user.reset_token_expires = None
+    db.commit()
+    
+    logger.info(f"Mot de passe réinitialisé pour: {user.email}")
+    
+    return {"message": "Mot de passe réinitialisé avec succès"}
 
 
 @router.post(
