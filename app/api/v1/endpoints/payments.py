@@ -43,6 +43,13 @@ def generate_payment_reference() -> str:
     return f"KOB-{datetime.utcnow().strftime('%Y%m%d')}-{uuid.uuid4().hex[:8].upper()}"
 
 
+def get_enum_value(value) -> str:
+    """Retourne la valeur string d'un enum ou la string directement."""
+    if isinstance(value, str):
+        return value
+    return value.value if hasattr(value, 'value') else str(value)
+
+
 @router.post(
     "/",
     response_model=PaymentResponse,
@@ -161,8 +168,8 @@ async def create_payment(
         event_type="creation",
         payment_id=str(payment.id),
         amount=float(payment.amount),
-        status=payment.status.value,
-        operator=payment.method.value,
+        status=get_enum_value(payment.status),
+        operator=get_enum_value(payment.method),
         details={"user_id": current_user.id, "session_id": session.id},
     )
     
@@ -245,8 +252,8 @@ async def initiate_mobile_payment(
         event_type="initiation",
         payment_id=str(payment.id),
         amount=amount + penalty,
-        status=payment.status.value,
-        operator=payment.method.value,
+        status=get_enum_value(payment.status),
+        operator=get_enum_value(payment.method),
         details={"reference": reference, "phone": payment_data.phone_number},
     )
     
@@ -400,7 +407,7 @@ async def validate_payment(
             payment_id=str(payment.id),
             amount=float(payment.amount),
             status="approved",
-            operator=payment.method.value,
+            operator=get_enum_value(payment.method),
             details={"validated_by": current_user.id},
         )
         
@@ -415,7 +422,7 @@ async def validate_payment(
             payment_id=str(payment.id),
             amount=float(payment.amount),
             status="rejected",
-            operator=payment.method.value,
+            operator=get_enum_value(payment.method),
             details={"reason": validation.rejection_reason},
         )
     
