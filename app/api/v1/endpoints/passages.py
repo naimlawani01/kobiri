@@ -100,7 +100,9 @@ async def generate_order(
             "trimestriel": relativedelta(months=3),
         }
         
-        delta = frequency_delta.get(tontine.frequency.value, relativedelta(months=1))
+        # tontine.frequency est déjà une string, pas un enum
+        freq = tontine.frequency.value if hasattr(tontine.frequency, 'value') else tontine.frequency
+        delta = frequency_delta.get(freq, relativedelta(months=1))
         scheduled_date = tontine.start_date + (delta * (item["order_number"] - 1))
         
         passage = Passage(
