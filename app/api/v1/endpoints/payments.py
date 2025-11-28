@@ -124,17 +124,24 @@ async def create_payment(
             detail="Vous n'êtes pas membre de cette tontine",
         )
     
-    # Vérifier s'il n'y a pas déjà un paiement validé pour cette session
+    # Vérifier s'il n'y a pas déjà un paiement pour cette session
+    # Un membre ne peut avoir qu'un seul paiement par session (peu importe le statut)
     existing = db.query(Payment).filter(
         Payment.session_id == session.id,
         Payment.user_id == current_user.id,
-        Payment.status.in_(["valide", "en_cours"]),
+        Payment.status.in_(["en_attente", "en_cours", "valide"]),  # Inclure aussi "en_attente"
     ).first()
     
     if existing:
+        status_msg = {
+            "en_attente": "en attente de validation",
+            "en_cours": "en cours",
+            "valide": "validé",
+        }.get(existing.status, existing.status)
+        
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Vous avez déjà un paiement pour cette session",
+            detail=f"Vous avez déjà un paiement {status_msg} pour cette session. Un seul paiement par session est autorisé.",
         )
     
     # Vérifier si c'est en retard
@@ -217,6 +224,25 @@ async def initiate_mobile_payment(
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="Vous n'êtes pas membre de cette tontine",
+        )
+    
+    # Vérifier s'il n'y a pas déjà un paiement pour cette session
+    existing = db.query(Payment).filter(
+        Payment.session_id == session.id,
+        Payment.user_id == current_user.id,
+        Payment.status.in_(["en_attente", "en_cours", "valide"]),
+    ).first()
+    
+    if existing:
+        status_msg = {
+            "en_attente": "en attente de validation",
+            "en_cours": "en cours",
+            "valide": "validé",
+        }.get(existing.status, existing.status)
+        
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Vous avez déjà un paiement {status_msg} pour cette session. Un seul paiement par session est autorisé.",
         )
     
     # Calculer les montants

@@ -3506,3 +3506,39 @@ FROM (SELECT tontines.id AS tontines_id, tontines.name AS tontines_name,...
 2025-11-28 17:44:13.946 | DEBUG    | app.core.logging:log_database_query:134 | SQL Query (0.18ms): SELECT 1...
 2025-11-28 17:44:13.946 | INFO     | app.database:check_db_connection:131 | Connexion à la base de données établie
 2025-11-28 17:44:13.946 | INFO     | app.main:lifespan:52 | Application prête à recevoir des requêtes
+2025-11-28 17:50:13.140 | INFO     | app.main:lifespan:57 | Arrêt de l'application...
+2025-11-28 17:50:13.144 | INFO     | app.main:lifespan:58 | Application arrêtée proprement
+2025-11-28 17:50:14.179 | INFO     | app.core.logging:setup_logging:87 | Système de logging initialisé
+2025-11-28 17:50:14.179 | DEBUG    | app.core.logging:setup_logging:88 | Niveau de log: DEBUG
+2025-11-28 17:50:14.179 | DEBUG    | app.core.logging:setup_logging:89 | Fichier de log: logs/kobiri.log
+2025-11-28 17:50:14.225 | INFO     | app.main:lifespan:36 | ============================================================
+2025-11-28 17:50:14.225 | INFO     | app.main:lifespan:37 | Démarrage de Kobiri v1.0.0
+2025-11-28 17:50:14.225 | INFO     | app.main:lifespan:38 | Environnement: development
+2025-11-28 17:50:14.225 | INFO     | app.main:lifespan:39 | ============================================================
+2025-11-28 17:50:14.257 | DEBUG    | app.core.logging:log_database_query:134 | SQL Query (0.23ms): SELECT 1...
+2025-11-28 17:50:14.257 | INFO     | app.database:check_db_connection:131 | Connexion à la base de données établie
+2025-11-28 17:50:14.257 | INFO     | app.main:lifespan:52 | Application prête à recevoir des requêtes
+2025-11-28 17:50:29.404 | INFO     | app.main:lifespan:57 | Arrêt de l'application...
+2025-11-28 17:50:29.405 | INFO     | app.main:lifespan:58 | Application arrêtée proprement
+2025-11-28 17:50:30.319 | INFO     | app.core.logging:setup_logging:87 | Système de logging initialisé
+2025-11-28 17:50:30.319 | DEBUG    | app.core.logging:setup_logging:88 | Niveau de log: DEBUG
+2025-11-28 17:50:30.319 | DEBUG    | app.core.logging:setup_logging:89 | Fichier de log: logs/kobiri.log
+2025-11-28 17:50:30.364 | INFO     | app.main:lifespan:36 | ============================================================
+2025-11-28 17:50:30.365 | INFO     | app.main:lifespan:37 | Démarrage de Kobiri v1.0.0
+2025-11-28 17:50:30.365 | INFO     | app.main:lifespan:38 | Environnement: development
+2025-11-28 17:50:30.365 | INFO     | app.main:lifespan:39 | ============================================================
+2025-11-28 17:50:30.394 | DEBUG    | app.core.logging:log_database_query:134 | SQL Query (0.22ms): SELECT 1...
+2025-11-28 17:50:30.394 | INFO     | app.database:check_db_connection:131 | Connexion à la base de données établie
+2025-11-28 17:50:30.394 | INFO     | app.main:lifespan:52 | Application prête à recevoir des requêtes
+2025-11-28 17:50:43.209 | INFO     | app.main:lifespan:57 | Arrêt de l'application...
+2025-11-28 17:50:43.210 | INFO     | app.main:lifespan:58 | Application arrêtée proprement
+2025-11-28 17:50:44.202 | INFO     | app.core.logging:setup_logging:87 | Système de logging initialisé
+2025-11-28 17:50:44.202 | DEBUG    | app.core.logging:setup_logging:88 | Niveau de log: DEBUG
+2025-11-28 17:50:44.202 | DEBUG    | app.core.logging:setup_logging:89 | Fichier de log: logs/kobiri.log
+2025-11-28 17:50:44.249 | INFO     | app.main:lifespan:36 | ============================================================
+2025-11-28 17:50:44.249 | INFO     | app.main:lifespan:37 | Démarrage de Kobiri v1.0.0
+2025-11-28 17:50:44.249 | INFO     | app.main:lifespan:38 | Environnement: development
+2025-11-28 17:50:44.250 | INFO     | app.main:lifespan:39 | ============================================================
+2025-11-28 17:50:44.277 | DEBUG    | app.core.logging:log_database_query:134 | SQL Query (0.28ms): SELECT 1...
+2025-11-28 17:50:44.277 | INFO     | app.database:check_db_connection:131 | Connexion à la base de données établie
+2025-11-28 17:50:44.277 | INFO     | app.main:lifespan:52 | Application prête à recevoir des requêtes
