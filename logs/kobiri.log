@@ -3242,3 +3242,27 @@ FROM (SELECT tontines.id AS tontines_id, tontines.name AS tontines_name,...
 2025-11-28 17:18:17.358 | DEBUG    | app.core.logging:log_database_query:134 | SQL Query (0.20ms): SELECT 1...
 2025-11-28 17:18:17.358 | INFO     | app.database:check_db_connection:131 | Connexion à la base de données établie
 2025-11-28 17:18:17.359 | INFO     | app.main:lifespan:52 | Application prête à recevoir des requêtes
+2025-11-28 17:24:42.216 | INFO     | app.main:lifespan:57 | Arrêt de l'application...
+2025-11-28 17:24:42.217 | INFO     | app.main:lifespan:58 | Application arrêtée proprement
+2025-11-28 17:24:43.374 | INFO     | app.core.logging:setup_logging:87 | Système de logging initialisé
+2025-11-28 17:24:43.374 | DEBUG    | app.core.logging:setup_logging:88 | Niveau de log: DEBUG
+2025-11-28 17:24:43.374 | DEBUG    | app.core.logging:setup_logging:89 | Fichier de log: logs/kobiri.log
+2025-11-28 17:24:43.420 | INFO     | app.main:lifespan:36 | ============================================================
+2025-11-28 17:24:43.421 | INFO     | app.main:lifespan:37 | Démarrage de Kobiri v1.0.0
+2025-11-28 17:24:43.421 | INFO     | app.main:lifespan:38 | Environnement: development
+2025-11-28 17:24:43.421 | INFO     | app.main:lifespan:39 | ============================================================
+2025-11-28 17:24:43.453 | DEBUG    | app.core.logging:log_database_query:134 | SQL Query (0.21ms): SELECT 1...
+2025-11-28 17:24:43.453 | INFO     | app.database:check_db_connection:131 | Connexion à la base de données établie
+2025-11-28 17:24:43.453 | INFO     | app.main:lifespan:52 | Application prête à recevoir des requêtes
+2025-11-28 17:24:52.038 | INFO     | app.main:lifespan:57 | Arrêt de l'application...
+2025-11-28 17:24:52.038 | INFO     | app.main:lifespan:58 | Application arrêtée proprement
+2025-11-28 17:24:52.897 | INFO     | app.core.logging:setup_logging:87 | Système de logging initialisé
+2025-11-28 17:24:52.897 | DEBUG    | app.core.logging:setup_logging:88 | Niveau de log: DEBUG
+2025-11-28 17:24:52.897 | DEBUG    | app.core.logging:setup_logging:89 | Fichier de log: logs/kobiri.log
+2025-11-28 17:24:52.943 | INFO     | app.main:lifespan:36 | ============================================================
+2025-11-28 17:24:52.943 | INFO     | app.main:lifespan:37 | Démarrage de Kobiri v1.0.0
+2025-11-28 17:24:52.943 | INFO     | app.main:lifespan:38 | Environnement: development
+2025-11-28 17:24:52.943 | INFO     | app.main:lifespan:39 | ============================================================
+2025-11-28 17:24:52.969 | DEBUG    | app.core.logging:log_database_query:134 | SQL Query (0.20ms): SELECT 1...
+2025-11-28 17:24:52.970 | INFO     | app.database:check_db_connection:131 | Connexion à la base de données établie
+2025-11-28 17:24:52.970 | INFO     | app.main:lifespan:52 | Application prête à recevoir des requêtes

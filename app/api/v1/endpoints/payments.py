@@ -74,7 +74,7 @@ async def create_payment(
         ).filter(
             CotisationSession.tontine_id == payment_data.tontine_id,
             CotisationSession.status == "en_cours",
-        ).order_by(CotisationSession.session_date.desc()).first()
+        ).order_by(CotisationSession.scheduled_date.desc()).first()
         
         if not session:
             # Essayer de trouver une session programmée
@@ -83,7 +83,7 @@ async def create_payment(
             ).filter(
                 CotisationSession.tontine_id == payment_data.tontine_id,
                 CotisationSession.status == "programmee",
-            ).order_by(CotisationSession.session_date.asc()).first()
+            ).order_by(CotisationSession.scheduled_date.asc()).first()
     
     if not session:
         raise HTTPException(
