@@ -162,4 +162,18 @@ class Payment(Base):
     def requires_validation(self) -> bool:
         """Vérifie si le paiement attend une validation."""
         return self.status == "en_attente" and self.is_manual
+    
+    @property
+    def user_name(self) -> str:
+        """Nom complet de l'utilisateur qui a payé."""
+        if self.user:
+            return f"{self.user.first_name} {self.user.last_name}"
+        return ""
+    
+    @property
+    def user_phone(self) -> str:
+        """Téléphone de l'utilisateur qui a payé."""
+        if self.user:
+            return self.user.phone or ""
+        return ""
 
