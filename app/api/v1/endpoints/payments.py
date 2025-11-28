@@ -57,19 +57,48 @@ async def create_payment(
     """
     Enregistre un paiement manuel (espèces ou preuve de paiement).
     Le paiement sera en attente de validation par un gestionnaire.
+    
+    Si session_id n'est pas fourni, utilise la session en cours de la tontine.
     """
-    # Récupérer la session
-    session = db.query(CotisationSession).options(
-        joinedload(CotisationSession.tontine)
-    ).filter(CotisationSession.id == payment_data.session_id).first()
+    session = None
+    
+    if payment_data.session_id:
+        # Session spécifiée
+        session = db.query(CotisationSession).options(
+            joinedload(CotisationSession.tontine)
+        ).filter(CotisationSession.id == payment_data.session_id).first()
+    else:
+        # Trouver la session en cours pour cette tontine
+        session = db.query(CotisationSession).options(
+            joinedload(CotisationSession.tontine)
+        ).filter(
+            CotisationSession.tontine_id == payment_data.tontine_id,
+            CotisationSession.status == "en_cours",
+        ).order_by(CotisationSession.session_date.desc()).first()
+        
+        if not session:
+            # Essayer de trouver une session programmée
+            session = db.query(CotisationSession).options(
+                joinedload(CotisationSession.tontine)
+            ).filter(
+                CotisationSession.tontine_id == payment_data.tontine_id,
+                CotisationSession.status == "programmee",
+            ).order_by(CotisationSession.session_date.asc()).first()
     
     if not session:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail="Session non trouvée",
+            detail="Aucune session en cours trouvée pour cette tontine. Demandez au président d'ouvrir une session.",
         )
     
-    if session.status != "en_cours":
+    # Vérifier que la session appartient bien à la tontine demandée
+    if session.tontine_id != payment_data.tontine_id:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="La session ne correspond pas à la tontine",
+        )
+    
+    if session.status not in ["en_cours", "programmee"]:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="La session n'est pas ouverte aux paiements",
@@ -115,6 +144,7 @@ async def create_payment(
         method=payment_data.method,
         status="en_attente",
         operator_reference=generate_payment_reference(),
+        operator_transaction_id=payment_data.transaction_id,  # ID de transaction fourni par l'utilisateur
         phone_number=payment_data.phone_number,
         proof_url=payment_data.proof_url,
         proof_description=payment_data.proof_description,

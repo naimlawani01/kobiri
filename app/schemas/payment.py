@@ -21,7 +21,9 @@ class PaymentBase(BaseModel):
 
 class PaymentCreate(PaymentBase):
     """Schéma pour créer un paiement (manuel ou initier mobile money)."""
-    session_id: int = Field(..., description="ID de la session")
+    tontine_id: int = Field(..., description="ID de la tontine")
+    session_id: Optional[int] = Field(None, description="ID de la session (optionnel, utilise la session en cours si non fourni)")
+    transaction_id: Optional[str] = Field(None, max_length=100, description="ID de transaction mobile money")
     phone_number: Optional[str] = Field(
         None, 
         description="Numéro pour mobile money"
@@ -32,6 +34,7 @@ class PaymentCreate(PaymentBase):
         description="URL de la preuve (paiement espèces)"
     )
     proof_description: Optional[str] = Field(None, max_length=500)
+    is_manual: bool = Field(default=True, description="Paiement déclaré manuellement")
     
     @field_validator("phone_number")
     @classmethod
