@@ -308,6 +308,56 @@ async def list_payments(
 
 
 @router.get(
+    "/tontine/{tontine_id}",
+    response_model=PaymentListResponse,
+    summary="Liste des paiements d'une tontine",
+)
+async def list_tontine_payments(
+    tontine_id: int,
+    status_filter: Optional[PaymentStatus] = Query(None, alias="status"),
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_active_user),
+) -> Any:
+    """
+    Liste les paiements d'une tontine spécifique.
+    Permet de filtrer par statut (ex: en_attente).
+    
+    Accessible par les membres de la tontine, président et trésorier.
+    """
+    # Vérifier que l'utilisateur est membre de la tontine
+    member = db.query(TontineMember).filter(
+        TontineMember.tontine_id == tontine_id,
+        TontineMember.user_id == current_user.id,
+        TontineMember.is_active == True,
+    ).first()
+    
+    if not member and current_user.role != "admin":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Vous n'êtes pas membre de cette tontine",
+        )
+    
+    query = db.query(Payment).options(joinedload(Payment.user)).filter(
+        Payment.tontine_id == tontine_id
+    )
+    
+    # Filtrer par statut si fourni
+    if status_filter:
+        query = query.filter(Payment.status == get_enum_value(status_filter))
+    
+    total = query.count()
+    payments = query.order_by(Payment.created_at.desc()).all()
+    
+    return PaymentListResponse(
+        items=payments,
+        total=total,
+        page=1,
+        page_size=total,
+        pages=1,
+    )
+
+
+@router.get(
     "/{payment_id}",
     response_model=PaymentResponse,
     summary="Détails d'un paiement",
